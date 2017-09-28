@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SmartCitiesComponent } from './smart-cities.component';
 import { MapContainerComponent } from './modules/mapTrip/map-container.component';
+import { MapCreateSpotComponent } from './modules/map-createspots/map-createspot.component';
 
 // Se van a borrar
 import { HomeSmartCitiesComponent } from './components/home-smart-cities/home-smart-cities.component';
@@ -51,7 +52,8 @@ import { PublicTransportModule } from './modules/public-transport/public-transpo
   declarations: [
     SmartCitiesComponent,
     HomeSmartCitiesComponent,
-	MapContainerComponent
+    MapContainerComponent,
+    MapCreateSpotComponent
   ],
   exports: [
     SmartCitiesComponent

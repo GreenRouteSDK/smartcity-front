@@ -14,6 +14,7 @@ import { Time } from '../../../../../../core/models/time';
 import { TransportSchedule } from '../../../../../../core/models/transport-schedule';
 import { WeekDay } from '../../../../../../core/models/week-day';
 
+
 @Component({
   selector: 'app-add-schedule',
   templateUrl: './add-schedule.component.html',
@@ -124,6 +125,7 @@ export class AddScheduleComponent implements OnInit {
       console.error('Error at load data');
       console.error(e);
     }
+    
   }
 
   onChangeAgency(event: any) {

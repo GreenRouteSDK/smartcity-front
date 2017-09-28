@@ -1,0 +1,131 @@
+<h2>
+  Create new transport spots
+</h2>
+<hr class="title-hr">
+<div id='mapbox-frame'></div>
+<pre id='coordinates' class='coordinates'></pre>
+
+<modal-popup [(visible)]="ShowInputData" title="Input data point">
+  <!-- <div class='row'>
+    <h3>Creating transtport Spot</h3>
+  </div> -->
+  <form [formGroup]='dataForm' >
+    <div class='row'>
+      <div class='form-group' [ngClass]="{'has-danger':!dataForm.controls['stop_id'].valid && dataForm.controls['stop_id'].touched}">
+        <div class="row" style="padding-left:30px; padding-top:4px">
+          <div class="col-md-5" style="background-color:lightgrey; padding-left:10px">
+            <label for='StopID'> stop_id *</label>
+          </div>
+          <div class="col-md-7">
+            <input id='StopID' type='text' class='form-control' placeholder=" stop id" [formControl]="dataForm.controls['stop_id']" />
+          </div>
+        </div>
+        <div *ngIf="dataForm.controls['stop_id'].hasError('required') && dataForm.controls['stop_id'].touched" class='alert alert-danger' ii8n>stop_id is required</div>
+        
+        <div class="row" style="padding-left:30px; padding-top:4px">
+          <div class="col-md-5" style="background-color:lightgrey; padding-left:10px">
+            <label for='StopCode'> stop_code </label>
+          </div>
+          <div class="col-md-7">
+            <input id='StopCode' type='text' class='form-control' placeholder=" stop code" [formControl]="dataForm.controls['stop_code']" />
+          </div>
+        </div>
+
+        <div class="row" style="padding-left:30px; padding-top:4px">
+          <div class="col-md-5" style="background-color:lightgrey; padding-left:10px">
+            <label for='StopName'> stop_name *</label>
+          </div>
+          <div class="col-md-7">
+            <input id='StopName' type='text' class='form-control' placeholder=" station " [formControl]="dataForm.controls['stop_name']" />
+          </div>
+        </div>
+        <div *ngIf="dataForm.controls['stop_name'].hasError('required') && dataForm.controls['stop_name'].touched" class='alert alert-danger' ii8n>stop_name is required</div>
+
+        <div class="row" style="padding-left:30px; padding-top:4px">
+          <div class="col-md-5" style="background-color:lightgrey; padding-left:10px">
+            <label for='StopDesc'> stop_desc </label>
+          </div>
+          <div class="col-md-7">
+            <input id='StopDesc' type='text' class='form-control' placeholder=" stop description" [formControl]="dataForm.controls['stop_desc']" />
+          </div>
+        </div>
+
+        <div class="row" style="padding-left:30px; padding-top:4px">
+          <div class="col-md-5" style="background-color:lightgrey; padding-left:10px">
+            <label for='ZoneId'> zone_id </label>
+          </div>
+          <div class="col-md-7">
+            <input id='ZoneId' type='text' class='form-control' placeholder=" zone id" [formControl]="dataForm.controls['zone_id']" />
+          </div>
+        </div>
+
+        <div class="row" style="padding-left:30px; padding-top:4px">
+          <div class="col-md-5" style="background-color:lightgrey; padding-left:10px">
+            <label for='StopUrl'> stop_url </label>
+          </div>
+          <div class="col-md-7">
+            <input id='StopUrl' type='text' class='form-control' placeholder=" stop URL" [formControl]="dataForm.controls['stop_url']" />
+          </div>
+        </div>
+
+        <div class="row" style="padding-left:30px; padding-top:4px">
+          <div class="col-md-5" style="background-color:lightgrey; padding-left:10px">
+            <label for='LocationType'> location_type </label>
+          </div>
+          <div class="col-md-7">
+            <input id='LocationType' type='text' class='form-control' placeholder=" location type" [formControl]="dataForm.controls['location_type']" />
+          </div>
+        </div>
+
+        <div class="row" style="padding-left:30px; padding-top:4px">
+          <div class="col-md-5" style="background-color:lightgrey; padding-left:10px">
+            <label for='ParentStation'> parent_station </label>
+          </div>
+          <div class="col-md-7">
+            <input id='ParentStation' type='text' class='form-control' placeholder=" parent station" [formControl]="dataForm.controls['parent_station']" />
+          </div>
+        </div>
+
+        <div class="row" style="padding-left:30px; padding-top:4px">
+          <div class="col-md-5" style="background-color:lightgrey; padding-left:10px">
+            <label for='StopTimezone'> stop_timezone </label>
+          </div>
+          <div class="col-md-7">
+            <input id='StopTimezone' type='text' class='form-control' placeholder=" stop timezone" [formControl]="dataForm.controls['stop_timezone']" />
+          </div>
+        </div>
+
+        <div class="row" style="padding-left:30px; padding-top:4px">
+          <div class="col-md-5" style="background-color:lightgrey; padding-left:10px">
+            <label for='WheelchairBoarding'> wheelchair_boarding </label>
+          </div>
+          <div class="col-md-7">
+            <input id='WheelchairBoarding' type='text' class='form-control' placeholder=" wheelchair boarding" [formControl]="dataForm.controls['wheelchair_boarding']" />
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </form>
+  <div class='row'>
+    <div class='col'>
+      <button type="button" class="btn btn-smart btn-block" data-dismiss="modal" (click)="cancelPoint();">Cancel</button>
+    </div>
+    <div class='col'>
+      <button type="button" class="btn btn-smart btn-block" data-dismiss="modal" (click)="savePoint();">Submit</button>
+    </div>
+  </div>
+</modal-popup>
+
+<div id='info' style="width:90%">
+  <p style="font-size:80%">Puntos : {{BusStops.length -1}}</p>
+  <tr *ngFor='let BS of BusStops'>
+      <td style='font-size:80%'>{{BS}}</td>
+  </tr>
+</div>
+<div class='row'>
+  <div class='col'></div>
+  <div class='col-md-3'>
+    <button type="button" class="btn btn-smart btn-block"  (click)="downloadFile();">Download csv file</button>
+  </div>
+</div>
