@@ -45,6 +45,9 @@
 		<a *ngIf="isUser" routerLink="/smart-cities/mapTrip" routerLinkActive="active" class="list-group-item" >
             <span class="iBlock"><i class="fa fa-flag" aria-hidden="true"></i></span> Plan my trip
         </a>
+		<a *ngIf="isUser" routerLink="/smart-cities/mapEarthquake" routerLinkActive="active" class="list-group-item" >
+            <span class="iBlock"><i class="fa fa-globe" aria-hidden="true"></i></span> Earthquake information
+        </a>
 
         <a *ngIf="isUser" routerLink="/smart-cities/user-account/user-group" routerLinkActive="active" class="list-group-item" >
             <span class="iBlock"><i class="fa fa-users" aria-hidden="true"></i></span> Subscription to Groups
