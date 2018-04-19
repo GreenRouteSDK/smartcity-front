@@ -15,23 +15,23 @@
                     <ul class="dropdown-menu alert-dropdown" aria-labelledby="name2">
                         <li class="dropdown-item" style="pointer-events: none;"> Alerts </li>
                         <li class="dropdown-divider"></li>
-                        <li *ngIf="nAccident > 0">
-                            <a href="javascript:;" class="dropdown-item" (click)="onChangeLocation('Accidents')"> Accidents <span class="red">({{nAccident}})</span></a>
+                        <li *ngIf="nTraffic > 0">
+                            <a href="javascript:;" class="dropdown-item" (click)="onChangeLocation('Traffic')"> Traffic <span class="red">({{nTraffic}})</span></a>
                         </li>
-                        <li *ngIf="nAsthma > 0">
-                            <a href="javascript:;" class="dropdown-item" (click)="onChangeLocation('AsthmaAttacks')"> Asthma attacks <span class="red">({{nAsthma}})</span></a>
+                        <li *ngIf="nWeather > 0">
+                            <a href="javascript:;" class="dropdown-item" (click)="onChangeLocation('Weather')"> Weather <span class="red">({{nWeather}})</span></a>
                         </li>
-                        <li *ngIf="nPollution > 0">
-                            <a href="javascript:;" class="dropdown-item" (click)="onChangeLocation('Pollution')"> Pollution <span class="red">({{nPollution}})</span></a>
+                        <li *ngIf="nEnvironment > 0">
+                            <a href="javascript:;" class="dropdown-item" (click)="onChangeLocation('Environment')"> Environment <span class="red">({{nEnvironment}})</span></a>
                         </li>
                         <li *ngIf="nPollen > 0">
                             <a href="javascript:;" class="dropdown-item" (click)="onChangeLocation('Pollen')"> Pollen <span class="red">({{nPollen}})</span></a>
                         </li>
-                        <li *ngIf="nTraffic > 0">
-                            <a href="javascript:;" class="dropdown-item" (click)="onChangeLocation('TrafficJam')"> Traffic Jam <span class="red">({{nTraffic}})</span></a>
+                        <li *ngIf="nHealth > 0">
+                            <a href="javascript:;" class="dropdown-item" (click)="onChangeLocation('Health')"> Health <span class="red">({{nHealth}})</span></a>
                         </li>
-                        <li *ngIf="nWeather > 0">
-                            <a href="javascript:;" class="dropdown-item" (click)="onChangeLocation('WeatherConditions')"> Weather <span class="red">({{nWeather}})</span></a>
+                        <li *ngIf="nSecurity > 0">
+                            <a href="javascript:;" class="dropdown-item" (click)="onChangeLocation('Security')"> Security <span class="red">({{nSecurity}})</span></a>
                         </li>
 						<li *ngIf="nSOS > 0">
                             <a href="javascript:;" class="dropdown-item" (click)="onChangeLocation('SOSAlerts')"> SOS Alertas <span class="red">({{nSOS}})</span></a>
