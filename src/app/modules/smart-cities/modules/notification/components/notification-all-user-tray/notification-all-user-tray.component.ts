@@ -124,8 +124,8 @@ export class NotificationAllUserTrayComponent implements OnInit {
         let date: string;
         date = this.getDateNow();
         try {
-            this._service.getAllByDateAlert(date, page, size).subscribe(
-            // this._service.getAllByUser(page, size).subscribe(
+            // this._service.getAllByDateAlert(date, page, size).subscribe(
+            this._service.getAllByUser(page, size).subscribe(
                 (res) => {
                     this.instance = new Paginable().deserialize(res);
                     this.alerts = this.instance.content;
@@ -180,8 +180,8 @@ export class NotificationAllUserTrayComponent implements OnInit {
             let date: string;
             date = this.getDateNow();
             // Con el metodo getAllByAlertDate, solo se muestran las alertas del dia en curso
-            this._service.getAllByAlertDate(type, date, page, size).subscribe(
-          //  this._service.getAllByTypeAlert(type, page, size).subscribe(
+            // this._service.getAllByAlertDate(type, date, page, size).subscribe(
+            this._service.getAllByTypeAlert(type, page, size).subscribe(
                 (res) => {
                     this.instance = new Paginable().deserialize(res);
                     this.alerts = this.instance.content;
@@ -208,8 +208,8 @@ export class NotificationAllUserTrayComponent implements OnInit {
             date = this.getDateNow();
             // con el metodo getAllByTypeSubTypeAlertDate, solo se muestran las alertas y subalertas
             // del dia en curso
-            this._service.getAllByTypeSubTypeAlertDate(type, subType, date, page, size).subscribe(
-         // this._service.getAllByTypeSubTypeAlert(type, subType, page, size).subscribe(
+            // this._service.getAllByTypeSubTypeAlertDate(type, subType, date, page, size).subscribe(
+            this._service.getAllByTypeSubTypeAlert(type, subType, page, size).subscribe(
                 (res) => {
                     this.instance = new Paginable().deserialize(res);
                     this.alerts = this.instance.content;
