@@ -33,6 +33,9 @@
                         <li *ngIf="nWeather > 0">
                             <a href="javascript:;" class="dropdown-item" (click)="onChangeLocation('WeatherConditions')"> Weather <span class="red">({{nWeather}})</span></a>
                         </li>
+                        <li *ngIf="nSOS > 0">
+                            <a href="javascript:;" class="dropdown-item" (click)="onChangeLocation('SOSAlerts')"> SOS Alertas <span class="red">({{nSOS}})</span></a>
+                        </li>
                         <li class="dropdown-divider"></li>
                         <li>
                             <a href="javascript:;" (click)="onChangeLocation(0)" class="dropdown-item">View All</a>

@@ -28,6 +28,7 @@ export class TopMenuComponent implements OnInit {
   nPollen:            number;
   nTraffic:           number;
   nWeather:           number;
+  nSOS:               number;
   nCount:             number;
 
   constructor(private loginService: LoginService, private router: Router, private notificationTypeService: NotificationTypeService) {
@@ -53,7 +54,8 @@ export class TopMenuComponent implements OnInit {
             this.nPollen = this.checkNotification(this.notifications, 'Pollen');
             this.nTraffic = this.checkNotification(this.notifications, 'TrafficJam');
             this.nWeather = this.checkNotification(this.notifications, 'WeatherConditions');
-            this.nCount = this.nAccident + this.nAsthma + this.nPollution + this.nPollen + this.nTraffic + this.nWeather;
+            this.nSOS = this.checkNotification(this.notifications, 'SOSAlerts');
+            this.nCount = this.nAccident + this.nAsthma + this.nPollution + this.nPollen + this.nTraffic + this.nWeather + this.nSOS;
           }
       );
 
