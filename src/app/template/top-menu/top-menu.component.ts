@@ -54,11 +54,7 @@ export class TopMenuComponent implements OnInit {
             this.nPollen = this.checkNotification(this.notifications, 'Pollen');
             this.nTraffic = this.checkNotification(this.notifications, 'TrafficJam');
             this.nWeather = this.checkNotification(this.notifications, 'WeatherConditions');
-<<<<<<< HEAD
             this.nSOS = this.checkNotification(this.notifications, 'SOSAlerts');
-=======
-			this.nSOS = this.checkNotification(this.notifications, 'SOSAlerts');
->>>>>>> c2b28e4c4559e9cb15bbafcc40ec481d633e51c8
             this.nCount = this.nAccident + this.nAsthma + this.nPollution + this.nPollen + this.nTraffic + this.nWeather + this.nSOS;
           }
       );
