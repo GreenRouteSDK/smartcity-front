@@ -22,12 +22,12 @@ export class TopMenuComponent implements OnInit {
   isTransportAdmin:   boolean;
   isUser:             boolean;
   notifications:      Array<NotificationType>;
-  nAccident:          number;
-  nAsthma:            number;
-  nPollution:         number;
-  nPollen:            number;
   nTraffic:           number;
   nWeather:           number;
+  nEnvironment:       number;
+  nPollen:            number;
+  nHealth:            number;
+  nSecurity:          number;
   nSOS:               number;
   nCount:             number;
 
@@ -48,14 +48,14 @@ export class TopMenuComponent implements OnInit {
           notifications => {
             this.notifications = notifications;
             // Setting here for javascript asynchrone
-            this.nAccident = this.checkNotification(this.notifications, 'Accidents');
-            this.nAsthma = this.checkNotification(this.notifications, 'AsthmaAttacks');
-            this.nPollution = this.checkNotification(this.notifications, 'Pollution');
+            this.nTraffic = this.checkNotification(this.notifications, 'Traffic');
+            this.nWeather = this.checkNotification(this.notifications, 'Weather');
+            this.nEnvironment = this.checkNotification(this.notifications, 'Environment');
             this.nPollen = this.checkNotification(this.notifications, 'Pollen');
-            this.nTraffic = this.checkNotification(this.notifications, 'TrafficJam');
-            this.nWeather = this.checkNotification(this.notifications, 'WeatherConditions');
+            this.nHealth = this.checkNotification(this.notifications, 'Health');
+            this.nSecurity = this.checkNotification(this.notifications, 'Security');
             this.nSOS = this.checkNotification(this.notifications, 'SOSAlerts');
-            this.nCount = this.nAccident + this.nAsthma + this.nPollution + this.nPollen + this.nTraffic + this.nWeather + this.nSOS;
+            this.nCount = this.nTraffic + this.nWeather + this.nEnvironment + this.nPollen + this.nHealth + this.nSecurity + this.nSOS;
           }
       );
 
