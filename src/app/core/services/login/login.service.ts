@@ -27,6 +27,7 @@ export class LoginService {
 
   constructor(private http: Http) {}
 
+  //Request to login endpoint
   login(email: string, password: string): Observable<IdentityUser> {
     const headers = new Headers();
     headers.append('Content-Type', constants.contentTypeJson);
