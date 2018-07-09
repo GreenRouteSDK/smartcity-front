@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'map-container',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapContainerComponent implements OnInit {
 
-  constructor() { }
+  map_url:SafeUrl;
+
+  constructor(private sanitizer: DomSanitizer) {
+    this.map_url = this.sanitizer.bypassSecurityTrustResourceUrl(environment.routingmap_url);
+  }
 
   ngOnInit() {
   }

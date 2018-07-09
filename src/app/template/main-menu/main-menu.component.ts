@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { LoginService } from '../../core/services/login/login.service';
 import { IdentityUser } from '../../core/models/identity-user';
 
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { environment } from '../../../environments/environment';
+
 import { constants } from '../../core/common/constants';
 
 @Component({
@@ -25,12 +28,16 @@ export class MainMenuComponent implements OnInit {
 
   identityUser: IdentityUser;
 
+  alerts_url: SafeUrl;
+
   isAdmin:            boolean;
   isSA:               boolean;
   isTransportAdmin:   boolean;
   isUser:             boolean;
 
-  constructor(private loginService: LoginService, private router: Router) { }
+  constructor(private loginService: LoginService, private router: Router, private sanitizer: DomSanitizer) {
+    this.alerts_url = this.sanitizer.bypassSecurityTrustUrl(environment.alerts_url);
+  }
 
   eventCalled() {
     this.isActive = !this.isActive;

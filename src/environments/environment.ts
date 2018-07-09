@@ -5,5 +5,8 @@
 
 export const environment = {
   production: false,
-  backend_sdk: 'http://localhost:9000/back-sdk'
+  backend_sdk: 'http://localhost:9000/back-sdk',
+  alerts_url: 'http://localhost:8443/#/',
+  statistics_url: 'http://localhost:3000/dashboard/db/airquality-dashboard',
+  routingmap_url: 'http://localhost:8081/'
 };

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'statistics-container',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatisticsContainerComponent implements OnInit {
 
-  constructor() { }
+  statistics_url:SafeUrl;
+  
+  constructor(private sanitizer: DomSanitizer) {
+    this.statistics_url = this.sanitizer.bypassSecurityTrustResourceUrl(environment.statistics_url);
+   }
 
   ngOnInit() {
   }
